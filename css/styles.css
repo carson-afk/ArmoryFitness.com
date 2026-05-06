@@ -802,5 +802,10 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
   margin-top: 8px; justify-self: start; cursor: pointer;
 }
 .cform button[type="submit"]:hover { background: var(--brass-lo); border-color: var(--brass-lo); }
-.nav__contact { margin-right: 12px; }
+.nav__contact {
+  padding: 14px 28px;
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
 @media (max-width: 900px) { .nav__contact { display: none; } }
