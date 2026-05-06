@@ -163,7 +163,8 @@ a.arrow-link:hover::after { transform: translateX(4px); }
 .nav__links a:hover::after { width: 100%; }
 .nav__cta {
   padding: 14px 28px; font-size: 11px;
-  flex-shrink: 0; margin-left: 8px;
+  flex-shrink: 0; margin-left: 6px;
+  min-width: 110px; text-align: center; justify-content: center;
 }
 
 @media (max-width: 1180px){
@@ -803,9 +804,8 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
 }
 .cform button[type="submit"]:hover { background: var(--brass-lo); border-color: var(--brass-lo); }
 .nav__contact {
-  padding: 14px 28px;
-  font-size: 11px;
-  flex-shrink: 0;
-  margin-right: 8px;
+  padding: 14px 28px; font-size: 11px;
+  flex-shrink: 0; margin-right: 0;
+  min-width: 110px; text-align: center; justify-content: center;
 }
 @media (max-width: 900px) { .nav__contact { display: none; } }
