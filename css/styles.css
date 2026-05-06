@@ -814,7 +814,7 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
 .nav__actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 14px;
   flex-shrink: 0;
 }
 .nav__actions .nav__contact, .nav__actions .nav__cta { margin: 0; }
