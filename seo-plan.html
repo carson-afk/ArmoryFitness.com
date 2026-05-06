@@ -37,12 +37,17 @@
   .phase__num { font-family: var(--mono); font-size: 12px; letter-spacing: .3em; color: var(--brass); text-transform: uppercase; }
   @media (max-width: 700px) { .doc .toc ol { columns: 1; } .doc .roi-grid { grid-template-columns: 1fr; } }
 </style>
+<link rel="icon" href="/images/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/armory-favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/armory-favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/armory-apple-touch.png" />
+<meta name="theme-color" content="#A23138" />
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
 
 <nav class="nav" aria-label="Primary">
-  <a class="nav__brand" href="/"><span class="mark"><span>A</span></span> Armory</a>
+  <a class="nav__brand" href="/"><img src="/images/armory-logo-transparent.png" alt="Armory Fitness" style="height:46px;width:auto;display:block;" /></a>
   <a class="btn btn--outline nav__cta" href="/">Back to site</a>
 </nav>
 
@@ -408,6 +413,33 @@
 
 </div>
 
+<!-- CONTACT FORM (footer lead form) -->
+<section class="contact-form" id="contact-form">
+  <div class="contact-form__inner">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Have a question? Drop your info.</h2>
+    <p class="contact-form__sub">Tell us what you&rsquo;re looking for. We&rsquo;ll follow up within one business day.</p>
+    <form action="https://formsubmit.co/armoryfitnessferndale@gmail.com" method="POST" class="cform">
+      <input type="hidden" name="_subject" value="New contact lead from armory-fitness.com" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value="https://www.armory-fitness.com/contact" />
+      <input type="text" name="_honey" style="display:none" />
+      <div class="cform__row">
+        <label><span>First name</span><input type="text" name="first_name" required /></label>
+        <label><span>Last name</span><input type="text" name="last_name" required /></label>
+      </div>
+      <div class="cform__row">
+        <label><span>Email</span><input type="email" name="email" required /></label>
+        <label><span>Phone</span><input type="tel" name="phone" required /></label>
+      </div>
+      <label class="cform__full"><span>Message</span><textarea name="message" rows="4" required placeholder="Tell us what you&rsquo;re working on."></textarea></label>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer__grid">
     <div><div class="footer__brand">Armory</div><p class="footer__tag">A 24-hour strength, recovery and nutrition club for everyday athletes in Ferndale, Whatcom County and the Pacific Northwest.</p></div>

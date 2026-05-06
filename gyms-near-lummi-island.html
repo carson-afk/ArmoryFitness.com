@@ -15,12 +15,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css" />
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HealthClub", "name": "Armory Fitness", "image": "https://www.armory-fitness.com/images/gym-main-floor.jpg", "url": "https://www.armory-fitness.com/gyms-near-lummi-island", "telephone": "+1-360-380-4405", "priceRange": "$$", "address": {"@type": "PostalAddress", "streetAddress": "1920 Main St, Suite 11", "addressLocality": "Ferndale", "addressRegion": "WA", "postalCode": "98248", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 48.8462, "longitude": -122.591}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59"}], "sameAs": ["https://www.facebook.com/armoryfitnessandwellness/", "https://www.instagram.com/armory_fitness_wellness/"], "areaServed": [{"@type": "City", "name": "Lummi Island"}, {"@type": "City", "name": "Ferndale"}]}</script>
+<link rel="icon" href="/images/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/images/armory-favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/images/armory-favicon-16.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/armory-apple-touch.png" />
+<meta name="theme-color" content="#A23138" />
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
 
 <nav class="nav" aria-label="Primary">
-  <a class="nav__brand" href="/"><span class="mark"><span>A</span></span> Armory</a>
+  <a class="nav__brand" href="/"><img src="/images/armory-logo-transparent.png" alt="Armory Fitness" style="height:46px;width:auto;display:block;" /></a>
   <ul class="nav__links">
     <li><a href="/classes">Classes</a></li>
     <li><a href="/schedule">Schedule</a></li>
@@ -31,6 +36,7 @@
     <li><a href="/about">About</a></li>
     <li><a href="/contact">Visit</a></li>
   </ul>
+  <a class="btn btn--outline nav__contact" href="#contact-form">Contact</a>
   <a class="btn btn--outline nav__cta" href="/membership">Join</a>
   <button class="nav__toggle" aria-label="Menu"><span></span></button>
 </nav>
@@ -82,6 +88,33 @@
   </div>
 </section>
 
+<!-- CONTACT FORM (footer lead form) -->
+<section class="contact-form" id="contact-form">
+  <div class="contact-form__inner">
+    <p class="eyebrow">Get in touch</p>
+    <h2>Have a question? Drop your info.</h2>
+    <p class="contact-form__sub">Tell us what you&rsquo;re looking for. We&rsquo;ll follow up within one business day.</p>
+    <form action="https://formsubmit.co/armoryfitnessferndale@gmail.com" method="POST" class="cform">
+      <input type="hidden" name="_subject" value="New contact lead from armory-fitness.com" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value="https://www.armory-fitness.com/contact" />
+      <input type="text" name="_honey" style="display:none" />
+      <div class="cform__row">
+        <label><span>First name</span><input type="text" name="first_name" required /></label>
+        <label><span>Last name</span><input type="text" name="last_name" required /></label>
+      </div>
+      <div class="cform__row">
+        <label><span>Email</span><input type="email" name="email" required /></label>
+        <label><span>Phone</span><input type="tel" name="phone" required /></label>
+      </div>
+      <label class="cform__full"><span>Message</span><textarea name="message" rows="4" required placeholder="Tell us what you&rsquo;re working on."></textarea></label>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
   <div class="footer__grid">
     <div><div class="footer__brand">Armory</div><p class="footer__tag">A 24-hour strength, recovery and nutrition club for everyday athletes in Ferndale, Whatcom County and the Pacific Northwest.</p></div>
