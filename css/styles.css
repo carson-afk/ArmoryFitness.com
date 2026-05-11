@@ -819,3 +819,156 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
 }
 .nav__actions .nav__contact, .nav__actions .nav__cta { margin: 0; }
 @media (max-width: 900px) { .nav__actions .nav__contact { display: none; } }
+
+/* ================== STATS BAR (count-up) ================== */
+.stats-bar {
+  background: linear-gradient(180deg, var(--ink) 0%, var(--obsidian) 100%);
+  border-top: 1px solid rgba(184,51,60,.18);
+  border-bottom: 1px solid rgba(184,51,60,.18);
+  padding: clamp(48px, 7vw, 96px) var(--gutter);
+  position: relative;
+  overflow: hidden;
+}
+.stats-bar::before {
+  content:""; position:absolute; inset:0;
+  background: radial-gradient(ellipse 800px 200px at 50% 50%, rgba(184,51,60,.08), transparent 70%);
+  pointer-events:none;
+}
+.stats-bar__grid {
+  position: relative;
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  text-align: center;
+}
+@media (max-width: 720px) { .stats-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; } }
+.stat__num {
+  font-family: var(--serif);
+  font-size: clamp(54px, 9vw, 110px);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--bone);
+  letter-spacing: -.03em;
+  background: linear-gradient(180deg, #fff 0%, var(--brass) 140%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.stat__suffix {
+  font-family: var(--serif);
+  font-size: clamp(28px, 5vw, 60px);
+  color: var(--brass);
+  margin-left: 4px;
+}
+.stat__label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--fog);
+  margin-top: 14px;
+  font-weight: 500;
+}
+
+/* ================== Magnetic + shimmer button effects ================== */
+.btn { position: relative; overflow: hidden; will-change: transform; }
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,.18) 50%, transparent 80%);
+  transform: skewX(-22deg);
+  transition: left .9s var(--ease);
+  pointer-events: none;
+}
+.btn:hover::after { left: 140%; }
+@media (hover: hover) {
+  .btn:active { transform: scale(.97); transition: transform .12s ease; }
+}
+
+/* Magnetic hover (set via JS via CSS vars --mx --my) */
+@media (hover: hover) and (pointer: fine) {
+  .btn[data-magnetic],
+  .nav__cta[data-magnetic],
+  .nav__contact[data-magnetic] {
+    transform: translate3d(var(--mx,0), var(--my,0), 0);
+    transition: transform .25s var(--ease), background .5s var(--ease), color .5s var(--ease);
+  }
+}
+
+/* ================== Card tilt + glow ================== */
+@media (hover: hover) and (pointer: fine) {
+  .gym-card, .w-card, .trainer, .pillar, .tier {
+    transform-style: preserve-3d;
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+    will-change: transform;
+  }
+  .gym-card:hover, .w-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 30px 60px -20px rgba(184,51,60,.25), 0 0 0 1px rgba(184,51,60,.35) inset;
+  }
+  .pillar:hover, .tier:hover {
+    transform: translateY(-3px);
+    border-color: var(--brass);
+  }
+  .trainer:hover .trainer__img {
+    transform: scale(1.04);
+    transition: transform .9s var(--ease);
+  }
+  .trainer__img { transition: transform .6s var(--ease); }
+}
+
+/* ================== Soft glow ring on focus ================== */
+.btn:focus-visible, .cform input:focus-visible, .cform textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(184,51,60,.35);
+}
+
+/* ================== Animated underline on nav links ================== */
+@media (hover: hover) {
+  .nav__links a { position: relative; }
+  .nav__links a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 100%; height: 1px;
+    background: var(--brass);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .35s var(--ease);
+  }
+  .nav__links a:hover::after { transform: scaleX(1); transform-origin: left; }
+}
+
+/* ================== Scroll-progress bar ================== */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brass) 0%, var(--ember) 100%);
+  width: 0%;
+  z-index: 200;
+  transition: width .08s linear;
+  pointer-events: none;
+}
+
+/* ================== Reveal upgrade (smoother + mobile-aware) ================== */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.is-visible { transition: none; transform: none; opacity: 1; }
+}
+
+/* ================== Mobile polish ================== */
+@media (max-width: 720px) {
+  .btn { font-size: 11px; padding: 16px 24px; letter-spacing: .2em; }
+  .nav__actions { gap: 8px; }
+  .stat__num { font-size: clamp(44px, 14vw, 64px); }
+  .stat__label { font-size: 10px; letter-spacing: .22em; }
+}
+
