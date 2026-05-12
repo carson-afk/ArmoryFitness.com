@@ -689,6 +689,7 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
    ============================================================ */
 .gym-grid{
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  grid-auto-flow: dense;
   margin-top: 28px;
 }
 .gym-card{
@@ -707,7 +708,7 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
   background:
     linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.0) 30%, rgba(0,0,0,.0) 55%, rgba(0,0,0,.92) 100%);
 }
-.gym-card.gym-card--lg{ grid-column: span 2; aspect-ratio: 16/10; }
+.gym-card.gym-card--tall{ grid-row: span 2; aspect-ratio: 3/4.6; }
 .gym-card__label{
   position: absolute; left: 18px; bottom: 38px; z-index: 2;
   font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500;
