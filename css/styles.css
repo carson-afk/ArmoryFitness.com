@@ -1013,3 +1013,21 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
   .nav__cta { padding: 10px 18px; font-size: 10px; letter-spacing: .2em; }
   .nav__brand img { height: 42px !important; }
 }
+
+/* ================== MANIFESTO MOBILE FIX (nutrition + home) ================== */
+@media (max-width: 900px) {
+  .manifesto__grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+    align-items: stretch !important;
+  }
+  .manifesto__img {
+    width: 100%;
+    min-height: 280px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+  }
+  .manifesto__text h2 { font-size: clamp(28px, 7vw, 40px); }
+  .manifesto__text p { font-size: 16px; max-width: 100%; }
+}
