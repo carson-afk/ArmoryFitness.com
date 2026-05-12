@@ -1060,3 +1060,108 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
       contrast(1.06);
   }
 }
+
+/* ================== MOBILE POLISH PASS — comprehensive ================== */
+
+/* Gym grid: stack to 1 column on phones, kill the tall row span so Ferndale becomes a regular tile */
+@media (max-width: 700px) {
+  .gym-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .gym-card.gym-card--tall {
+    grid-row: span 1;
+    aspect-ratio: 4/3;
+  }
+  /* On mobile, Ferndale should fit naturally — let the photo show top portion */
+  .gym-card[style*="outside-logo"] {
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  .gym-card__label { font-size: 18px; bottom: 32px; left: 14px; }
+  .gym-card__caption { font-size: 10px; left: 14px; bottom: 12px; }
+}
+
+/* Schedule table: horizontal scroll wrapper on mobile so wide tables don't break layout */
+.sched-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+@media (max-width: 700px) {
+  .sched-table { min-width: 640px; font-size: 13px; }
+  .sched-table th, .sched-table td { padding: 12px 8px; }
+  .sched-table .cell strong { font-size: 13px; }
+  .sched-table .cell em { font-size: 11px; }
+}
+
+/* Manifesto: tighten on phones */
+@media (max-width: 600px) {
+  .manifesto__grid { gap: 24px !important; }
+  .manifesto__img { min-height: 240px !important; }
+  .manifesto__text .pull { font-size: 18px !important; padding-left: 16px; margin: 24px 0 !important; }
+}
+
+/* CTA strip: tighter padding + readable headline on tiny screens */
+@media (max-width: 600px) {
+  .cta-strip__inner { padding: 56px 20px !important; }
+  .cta-strip h2 { font-size: clamp(28px, 9vw, 44px) !important; line-height: 1.05; }
+  .cta-strip p { font-size: 15px !important; margin-bottom: 32px !important; }
+}
+
+/* Contact form: edge-to-edge on phones, larger tap targets */
+@media (max-width: 600px) {
+  .contact-form { padding: 48px 20px !important; }
+  .contact-form__inner h2 { font-size: clamp(24px, 7vw, 36px) !important; }
+  .cform input, .cform textarea { padding: 16px 14px; font-size: 16px; /* prevents iOS zoom on focus */ }
+  .cform button[type="submit"] { width: 100%; padding: 18px 24px; }
+}
+
+/* Trainer cards: tighter on phones */
+@media (max-width: 600px) {
+  .trainer { padding: 0; gap: 16px; }
+  .trainer__img { aspect-ratio: 4/4; }
+  .trainer__name { font-size: 22px; }
+  .trainer__bio { font-size: 14px; line-height: 1.6; }
+  .trainer__certs { font-size: 11px; }
+}
+
+/* Hero meta + scroll cue: hide scroll hint on phones */
+@media (max-width: 700px) {
+  .hero__scroll { display: none; }
+  .hero__chrome { font-size: 9px; letter-spacing: .2em; padding: 14px 18px; }
+  .hero__meta-text { font-size: 14px; line-height: 1.55; }
+}
+
+/* Marquee: smaller items on mobile */
+@media (max-width: 600px) {
+  .marquee__item { font-size: 18px !important; }
+  .marquee__item::before { margin-right: 28px !important; }
+}
+
+/* Tiers / pricing: full-width cards, comfortable padding */
+@media (max-width: 600px) {
+  .tier { padding: 28px 22px; }
+  .tier__price { font-size: 40px; }
+  .tier__name { font-size: 18px; }
+}
+
+/* List rows (classes page) — compact stack */
+@media (max-width: 600px) {
+  .list-row { grid-template-columns: 60px 1fr; gap: 8px 14px; }
+  .list-row__num { font-size: 11px; }
+  .list-row__title { font-size: 18px; }
+  .list-row__desc { grid-column: 1 / -1; font-size: 13px; }
+  .list-row__price, .list-row__cta { display: none; }
+}
+
+/* Section padding tightening on phones */
+@media (max-width: 600px) {
+  section { padding: 56px 0 !important; }
+  .section-head { margin-bottom: 28px !important; }
+}
+
+/* Avoid horizontal scroll on the whole page */
+html, body { overflow-x: hidden; }
+
+/* iOS smooth scrolling */
+html { -webkit-overflow-scrolling: touch; }
+
+/* Tap highlight: subtle Armory-red */
+* { -webkit-tap-highlight-color: rgba(184, 51, 60, .25); }
