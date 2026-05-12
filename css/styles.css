@@ -520,11 +520,11 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
 .cta-strip__bg {
   position: absolute; inset: 0; z-index: 0;
   background-size: cover; background-position: center;
-  filter: brightness(.35) contrast(1.1);
+  filter: brightness(.6) contrast(1.05);
 }
 .cta-strip__bg::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(8,8,10,.6), rgba(8,8,10,.95));
+  background: linear-gradient(180deg, rgba(8,8,10,.35) 0%, rgba(8,8,10,.55) 40%, rgba(8,8,10,.8) 100%);
 }
 
 /* ---------- Footer ---------- */
