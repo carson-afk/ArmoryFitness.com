@@ -1031,3 +1031,31 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
   .manifesto__text h2 { font-size: clamp(28px, 7vw, 40px); }
   .manifesto__text p { font-size: 16px; max-width: 100%; }
 }
+
+/* ================== LOGO POP — drop shadow + subtle brightness lift ================== */
+.nav__brand img {
+  filter:
+    drop-shadow(0 0 14px rgba(255, 255, 255, 0.22))
+    drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45))
+    brightness(1.08)
+    contrast(1.05);
+  transition: filter .35s var(--ease), transform .35s var(--ease);
+}
+.nav__brand:hover img {
+  filter:
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.32))
+    drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5))
+    brightness(1.12)
+    contrast(1.08);
+  transform: scale(1.02);
+}
+/* Slightly stronger pop on mobile since it sits over the hero photo */
+@media (max-width: 900px) {
+  .nav__brand img {
+    filter:
+      drop-shadow(0 0 16px rgba(255, 255, 255, 0.28))
+      drop-shadow(0 3px 8px rgba(0, 0, 0, 0.55))
+      brightness(1.1)
+      contrast(1.06);
+  }
+}
