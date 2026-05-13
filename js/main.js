@@ -19,6 +19,7 @@
     const setOpen = (open) => {
       links.classList.toggle('open', open);
       if (nav) nav.classList.toggle('menu-open', open);
+      document.documentElement.classList.toggle('menu-open', open);
       document.body.classList.toggle('menu-open', open);
     };
     toggle.addEventListener('click', () => setOpen(!links.classList.contains('open')));
