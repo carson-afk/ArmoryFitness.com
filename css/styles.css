@@ -705,7 +705,9 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
   background-size: cover; background-position: center;
   background-color: #14181d;
   border: 1px solid rgba(255,255,255,.08);
-  overflow: hidden; cursor: pointer; display: block;
+  overflow: hidden; cursor: pointer;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 16px 18px;
   text-decoration: none; color: #fff;
   transition: transform .25s ease, box-shadow .25s ease;
   isolation: isolate;
@@ -718,14 +720,16 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
 }
 .gym-card.gym-card--tall{ grid-row: span 2; aspect-ratio: 3/4.6; }
 .gym-card__label{
-  position: absolute; left: 18px; bottom: 38px; z-index: 2;
+  position: relative; z-index: 2;
   font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500;
   letter-spacing: -0.01em; color: #fff; line-height: 1.05;
   text-shadow: 0 2px 8px rgba(0,0,0,.85);
+  margin-bottom: 6px;
 }
 .gym-card__caption{
-  position: absolute; left: 18px; bottom: 16px; z-index: 2;
+  position: relative; z-index: 2;
   font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  line-height: 1.45;
   letter-spacing: 0.16em; text-transform: uppercase;
   color: #F5C97A; font-weight: 600;
   text-shadow: 0 1px 6px rgba(0,0,0,.85);
@@ -755,7 +759,7 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
 @media (max-width: 540px){
   .gym-grid{ grid-template-columns: 1fr; gap: 12px; }
   .gym-card, .gym-card.gym-card--lg{ grid-column: span 1; aspect-ratio: 4/3; }
-  .gym-card__label{ font-size: 19px; bottom: 36px; }
+  .gym-card__label{ font-size: 19px; }
   .gym-card__caption{ font-size: 9px; }
 }
 
@@ -1087,8 +1091,9 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
     background-position: center !important;
     background-image: url('/images/outside-armory-mobile.png') !important;
   }
-  .gym-card__label { font-size: 18px; bottom: 32px; left: 14px; }
-  .gym-card__caption { font-size: 10px; left: 14px; bottom: 12px; }
+  .gym-card { padding: 12px 14px; }
+  .gym-card__label { font-size: 18px; }
+  .gym-card__caption { font-size: 10px; }
 }
 
 /* Schedule table: horizontal scroll wrapper on mobile so wide tables don't break layout */
