@@ -16,8 +16,13 @@
   const toggle = document.querySelector('.nav__toggle');
   const links = document.querySelector('.nav__links');
   if (toggle && links) {
-    toggle.addEventListener('click', () => links.classList.toggle('open'));
-    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    const setOpen = (open) => {
+      links.classList.toggle('open', open);
+      if (nav) nav.classList.toggle('menu-open', open);
+      document.body.classList.toggle('menu-open', open);
+    };
+    toggle.addEventListener('click', () => setOpen(!links.classList.contains('open')));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
   }
 
   /* ---------- Reveal on scroll ---------- */
@@ -63,7 +68,10 @@
       const tick = (now) => {
         const t = Math.min(1, (now - start) / dur);
         const v = target * easeOutCubic(t);
-        el.textContent = prefix + v.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + suffix;
+        const formatted = el.dataset.format === 'plain'
+          ? v.toFixed(decimals)
+          : v.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        el.textContent = prefix + formatted + suffix;
         if (t < 1) requestAnimationFrame(tick);
       };
       requestAnimationFrame(tick);

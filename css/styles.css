@@ -184,7 +184,7 @@ a.arrow-link:hover::after { transform: translateX(4px); }
 .nav__toggle span::before { top: -6px; }
 .nav__toggle span::after { top: 6px; }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .nav__links, .nav__cta { display: none; }
   .nav__toggle { display: inline-flex; }
   .nav__links.open {
@@ -809,7 +809,7 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
   flex-shrink: 0; margin-right: 0;
   min-width: 110px; text-align: center; justify-content: center;
 }
-@media (max-width: 900px) { .nav__contact { display: none; } }
+@media (max-width: 1100px) { .nav__contact { display: none; } }
 
 /* tight Contact+Join button pair in nav */
 .nav__actions {
@@ -819,7 +819,7 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
   flex-shrink: 0;
 }
 .nav__actions .nav__contact, .nav__actions .nav__cta { margin: 0; }
-@media (max-width: 900px) { .nav__actions .nav__contact { display: none; } }
+@media (max-width: 1100px) { .nav__actions .nav__contact { display: none; } }
 
 /* ================== STATS BAR (count-up) ================== */
 .stats-bar {
@@ -975,7 +975,7 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
 
 
 /* ================== MOBILE NAV: Book button center-stage ================== */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .nav {
     position: fixed;
     justify-content: space-between;
@@ -1074,9 +1074,10 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
     aspect-ratio: 4/3;
   }
   /* On mobile, Ferndale should fit naturally — let the photo show top portion */
-  .gym-card[style*="outside-logo"] {
+  .gym-card[style*="outside-armory"] {
     background-size: cover !important;
     background-position: center !important;
+    background-image: url('/images/outside-armory-mobile.jpg') !important;
   }
   .gym-card__label { font-size: 18px; bottom: 32px; left: 14px; }
   .gym-card__caption { font-size: 10px; left: 14px; bottom: 12px; }
@@ -1144,7 +1145,7 @@ section { padding: clamp(80px, 12vh, 160px) 0; }
 
 /* List rows (classes page) — compact stack */
 @media (max-width: 600px) {
-  .list-row { grid-template-columns: 60px 1fr; gap: 8px 14px; }
+  .list-row { grid-template-columns: 1fr; gap: 8px 14px; }
   .list-row__num { font-size: 11px; }
   .list-row__title { font-size: 18px; }
   .list-row__desc { grid-column: 1 / -1; font-size: 13px; }
@@ -1165,3 +1166,14 @@ html { -webkit-overflow-scrolling: touch; }
 
 /* Tap highlight: subtle Armory-red */
 * { -webkit-tap-highlight-color: rgba(184, 51, 60, .25); }
+
+/* Nav: dark background when mobile menu is open (regardless of scroll position) */
+.nav.menu-open {
+  background: rgba(8,8,10,.96);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom-color: var(--graphite);
+}
+
+/* Lock body scroll while mobile menu is open */
+body.menu-open { overflow: hidden; }
