@@ -195,6 +195,14 @@ a.arrow-link:hover::after { transform: translateX(4px); }
   .nav__links.open a { font-size: 18px; letter-spacing: .2em; }
 }
 
+/* Compress nav (padding + logo) at ≤1100px so the dropdown's 68px inset
+   doesn't overlap the Book button / logo bottom in the 901–1100px range.
+   Mirrors the values in the existing ≤900px polish — just extends the window. */
+@media (max-width: 1100px) {
+  .nav { padding: 14px var(--gutter); }
+  .nav__brand img { height: 48px !important; }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
