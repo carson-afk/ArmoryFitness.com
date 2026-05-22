@@ -1195,3 +1195,85 @@ html { -webkit-overflow-scrolling: touch; }
    because html owns viewport scrolling once it has any overflow value set
    (which it does via "html, body { overflow-x: hidden }" earlier in this file). */
 html.menu-open, body.menu-open { overflow: hidden; }
+
+/* ================== LOGO WHITE BACKGROUND (top-left brand) ================== */
+.nav__brand {
+  background: #ffffff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px -4px rgba(0,0,0,0.4);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.nav__brand:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px -4px rgba(0,0,0,0.5);
+}
+.nav__brand img {
+  /* Drop the dark-bg drop-shadow filters since we now have a white card */
+  filter: none !important;
+  display: block;
+}
+
+/* ================== HYROX SIM ANNOUNCEMENT BAR (sitewide) ================== */
+.announce-bar {
+  position: relative;
+  background: linear-gradient(90deg, #A23138 0%, #6f1d23 50%, #A23138 100%);
+  color: #fff;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+  z-index: 90;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+.announce-bar a, .announce-bar a:visited { color: #fff; text-decoration: none; }
+.announce-bar__track {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  white-space: nowrap;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  animation: announceScroll 28s linear infinite;
+  will-change: transform;
+}
+.announce-bar__track > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.announce-bar__track strong { color: #FFD15C; font-weight: 700; }
+.announce-bar__dot {
+  width: 6px; height: 6px;
+  background: #FFD15C;
+  border-radius: 50%;
+  display: inline-block;
+}
+.announce-bar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: #FFD15C;
+  color: #1a0d10 !important;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 11px;
+}
+.announce-bar__cta:hover { background: #fff; }
+@keyframes announceScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+/* Push the nav down by the announce bar height */
+body.has-announce .nav { top: 44px; }
+.has-announce { padding-top: 44px; }
+@media (max-width: 600px) {
+  .announce-bar { height: 38px; }
+  .announce-bar__track { font-size: 11px; letter-spacing: .12em; gap: 36px; }
+  body.has-announce .nav { top: 38px; }
+  .has-announce { padding-top: 38px; }
+}
