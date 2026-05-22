@@ -1216,7 +1216,10 @@ html.menu-open, body.menu-open { overflow: hidden; }
 
 /* ================== HYROX SIM ANNOUNCEMENT BAR (sitewide) ================== */
 .announce-bar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: linear-gradient(90deg, #A23138 0%, #6f1d23 50%, #A23138 100%);
   color: #fff;
   overflow: hidden;
