@@ -18,6 +18,63 @@
 <meta name="theme-color" content="#A23138" />
 <meta name="google-site-verification" content="MCF0lqNEy7Z9RRTqlpNx7ErwFXat9F2fDl5kGJY77tI" />
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HealthClub","name":"Armory Fitness","image":"https://www.armory-fitness.com/images/gym-main-floor.jpg","url":"https://www.armory-fitness.com/24-hour-gym-welcome","telephone":"+1-360-380-4405","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"1920 Main St, Suite 11","addressLocality":"Ferndale","addressRegion":"WA","postalCode":"98248","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":48.8462,"longitude":-122.591},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}],"areaServed":[{"@type":"City","name":"Welcome"},{"@type":"City","name":"Ferndale"}],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"24-Hour Gym"}}]}</script>
+<!-- Google Analytics 4 (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PLACEHOLDER', {
+    page_title: document.title,
+    page_path: window.location.pathname
+  });
+
+  /* Event tracking — runs after DOM ready */
+  document.addEventListener('DOMContentLoaded', function() {
+    /* Book button (nav, top-right + hero CTAs) */
+    document.querySelectorAll('a[href*="ArmoryFitnessandWellness"], a[href*="armoryfitnessandwellness"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        var label = (a.textContent || '').trim().toLowerCase();
+        var isHyroxEvent = a.href.indexOf('appointment/93133519') !== -1 || a.href.indexOf('appointmentType=93133519') !== -1;
+        gtag('event', isHyroxEvent ? 'hyrox_sim_signup_click' : 'book_appointment_click', {
+          event_category: 'engagement',
+          event_label: label || 'unknown',
+          link_url: a.href
+        });
+      });
+    });
+
+    /* Phone clicks */
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'phone_call_click', {
+          event_category: 'lead',
+          event_label: a.href.replace('tel:','')
+        });
+      });
+    });
+
+    /* Contact form submit */
+    document.querySelectorAll('form[action*="formsubmit.co"]').forEach(function(form){
+      form.addEventListener('submit', function(){
+        gtag('event', 'contact_form_submit', {
+          event_category: 'lead',
+          event_label: window.location.pathname
+        });
+      });
+    });
+
+    /* Hyrox flyer click (image on the Hyrox page) */
+    document.querySelectorAll('img[alt*="Hyrox Sim Event"]').forEach(function(img){
+      var a = img.closest('a');
+      if (a) a.addEventListener('click', function(){
+        gtag('event', 'hyrox_flyer_click', { event_category: 'engagement', event_label: 'hyrox_page_flyer' });
+      });
+    });
+  });
+</script>
+<!-- End GA4 -->
+
 </head><body class="has-announce"><div class="announce-bar" role="region" aria-label="Hyrox Sim Event">
   <div class="announce-bar__track">
     <span><span class="announce-bar__dot"></span> <strong>HYROX SIM</strong> &middot; June 13, 2026 &middot; Test your fitness, own your race</span>
