@@ -1280,3 +1280,25 @@ body.has-announce .nav { top: 44px; }
   body.has-announce .nav { top: 38px; }
   .has-announce { padding-top: 38px; }
 }
+
+/* ================== HYROX SIM EVENT BLOCK (responsive) ================== */
+.hyrox-event {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1200px;
+}
+.hyrox-event img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 20px 50px -15px rgba(0,0,0,.6); display:block; }
+@media (max-width: 900px) {
+  .hyrox-event { grid-template-columns: 1fr; gap: 32px; }
+  .hyrox-event img { max-width: 520px; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  .hyrox-event { gap: 24px; }
+  .hyrox-event h2 { font-size: clamp(28px, 8vw, 40px) !important; margin-bottom: 16px !important; }
+  .hyrox-event p { font-size: 15px; }
+  .hyrox-event .btn { width: 100%; text-align: center; justify-content: center; }
+  .hyrox-event div[style*="margin-top:36px"] { flex-direction: column; gap: 10px !important; }
+  .hyrox-event div[style*="margin-top:32px"] { font-size: 14px; }
+}
