@@ -1220,12 +1220,13 @@ html.menu-open, body.menu-open { overflow: hidden; }
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(90deg, #A23138 0%, #6f1d23 50%, #A23138 100%);
+  background: linear-gradient(90deg, #8B252E 0%, #C12A35 25%, #A23138 50%, #C12A35 75%, #8B252E 100%);
   color: #fff;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 2px solid #FFD15C;
+  box-shadow: 0 4px 18px rgba(162,49,56,0.45);
   z-index: 90;
-  height: 44px;
+  height: 52px;
   display: flex;
   align-items: center;
 }
@@ -1233,14 +1234,14 @@ html.menu-open, body.menu-open { overflow: hidden; }
 .announce-bar__track {
   display: flex;
   align-items: center;
-  gap: 56px;
+  gap: 64px;
   white-space: nowrap;
   font-family: var(--sans);
-  font-size: 13px;
-  letter-spacing: .15em;
+  font-size: 13.5px;
+  letter-spacing: .14em;
   text-transform: uppercase;
   font-weight: 600;
-  animation: announceScroll 28s linear infinite;
+  animation: announceScroll 38s linear infinite;
   will-change: transform;
 }
 .announce-bar__track > span {
@@ -1248,7 +1249,20 @@ html.menu-open, body.menu-open { overflow: hidden; }
   align-items: center;
   gap: 14px;
 }
-.announce-bar__track strong { color: #FFD15C; font-weight: 700; }
+.announce-bar__track strong { color: #FFD15C; font-weight: 800; letter-spacing: .18em; }
+.announce-bar__pulse {
+  width: 9px; height: 9px;
+  background: #FFD15C;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(255,209,92,0.7);
+  animation: barPulse 1.6s ease-in-out infinite;
+}
+@keyframes barPulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,209,92,0.85); }
+  70% { box-shadow: 0 0 0 12px rgba(255,209,92,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,209,92,0); }
+}
 .announce-bar__dot {
   width: 6px; height: 6px;
   background: #FFD15C;
@@ -1259,26 +1273,31 @@ html.menu-open, body.menu-open { overflow: hidden; }
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
+  padding: 7px 18px;
   background: #FFD15C;
   color: #1a0d10 !important;
   border-radius: 999px;
-  font-weight: 700;
-  font-size: 11px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .1em;
+  box-shadow: 0 2px 10px rgba(0,0,0,.35);
+  transition: background .25s ease, transform .25s ease;
 }
-.announce-bar__cta:hover { background: #fff; }
+.announce-bar__cta:hover { background: #fff; transform: scale(1.04); }
 @keyframes announceScroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
 /* Push the nav down by the announce bar height */
-body.has-announce .nav { top: 44px; }
-.has-announce { padding-top: 44px; }
+body.has-announce .nav { top: 52px; }
+.has-announce { padding-top: 52px; }
 @media (max-width: 600px) {
-  .announce-bar { height: 38px; }
-  .announce-bar__track { font-size: 11px; letter-spacing: .12em; gap: 36px; }
-  body.has-announce .nav { top: 38px; }
-  .has-announce { padding-top: 38px; }
+  .announce-bar { height: 44px; }
+  .announce-bar__track { font-size: 11px; letter-spacing: .12em; gap: 38px; animation-duration: 32s; }
+  .announce-bar__cta { padding: 5px 12px; font-size: 10px; letter-spacing: .08em; }
+  .announce-bar__pulse { width: 7px; height: 7px; }
+  body.has-announce .nav { top: 44px; }
+  .has-announce { padding-top: 44px; }
 }
 
 /* ================== HYROX SIM EVENT BLOCK (responsive) ================== */
