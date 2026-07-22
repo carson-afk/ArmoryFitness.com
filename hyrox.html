@@ -76,6 +76,41 @@
 </script>
 <!-- End GA4 -->
 
+
+<style>
+.hyrox-hero{display:grid;grid-template-columns:1fr 1fr;min-height:70vh;align-items:center}
+.hyrox-hero__text{padding:4rem 2rem 4rem 0}
+.hyrox-hero__text .eyebrow{color:var(--brass);text-transform:uppercase;letter-spacing:.15em;font-size:.85rem;margin-bottom:.5rem}
+.hyrox-hero__text h1{font-family:var(--font-display);font-size:clamp(2.6rem,5vw,4.2rem);color:var(--bone);margin-bottom:1.2rem;line-height:1.05}
+.hyrox-hero__text p{color:var(--fog);font-size:1.05rem;line-height:1.7;margin-bottom:2rem;max-width:540px}
+.hyrox-info-cards{display:flex;gap:1.2rem;margin-bottom:2rem}
+.hyrox-info-card{flex:1;border:1px solid var(--steel);border-radius:8px;padding:1.4rem 1.2rem;text-align:center}
+.hyrox-info-card__icon{font-size:1.8rem;margin-bottom:.5rem;color:var(--brass)}
+.hyrox-info-card__label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;color:var(--bone);margin-bottom:.3rem}
+.hyrox-info-card__value{color:var(--fog);font-size:.9rem}
+.hyrox-hero__image{position:relative;min-height:500px;background-size:contain;background-position:center;background-repeat:no-repeat}
+.hyrox-features{padding:5rem 0;background:var(--carbon)}
+.hyrox-features__grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem}
+.hyrox-feature{padding:2rem;border-left:3px solid var(--brass);background:var(--ink);border-radius:0 6px 6px 0}
+.hyrox-feature h3{font-family:var(--font-display);color:var(--bone);font-size:1.15rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem}
+.hyrox-feature p{color:var(--fog);font-size:.95rem;line-height:1.6}
+.hyrox-event-details{padding:5rem 0;background:var(--ink)}
+.hyrox-event-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+.hyrox-detail-card{background:var(--carbon);border-radius:8px;padding:1.8rem;text-align:center}
+.hyrox-detail-card__label{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;font-size:.75rem;color:var(--brass);margin-bottom:.5rem}
+.hyrox-detail-card__value{color:var(--bone);font-size:1.05rem;line-height:1.5}
+.hyrox-cta-row{display:flex;gap:1rem;margin-top:2.5rem;justify-content:center}
+.hyrox-programs{padding:5rem 0;background:var(--obsidian)}
+@media(max-width:768px){
+.hyrox-hero{grid-template-columns:1fr;text-align:center}
+.hyrox-hero__text{padding:3rem 0}
+.hyrox-hero__image{min-height:350px}
+.hyrox-info-cards{flex-direction:column}
+.hyrox-features__grid{grid-template-columns:1fr}
+.hyrox-event-grid{grid-template-columns:1fr}
+}
+</style>
+
 </head>
 <body class="has-announce"><div class="announce-bar" role="region" aria-label="Hyrox Simulator Event">
   <div class="announce-bar__track">
@@ -114,64 +149,130 @@
     <p>The next <strong>Hyrox Sim Event</strong> hits Armory Fitness on <strong>Saturday, August 22, 2026</strong>. Test your fitness, own your race. Start times every 20 minutes &mdash; Full from 6 AM to 9 AM, Half from 9:30 AM to Noon. Singles &amp; Doubles. Open and Pro divisions. <strong>Full $50/athlete, Half $25/athlete.</strong> <a href="https://armoryfitnessandwellness.as.me/schedule/88534eda/appointment/93133519/calendar/8091173" target="_blank" rel="noopener" style="color:var(--brass);text-decoration:underline;">Register here.</a></p>
   </div>
 </header>
-<!-- HYROX SIM EVENT FLYER + SIGNUP -->
-<section class="section" style="padding-top:48px;padding-bottom:48px;">
-  <div class="wrap hyrox-event">
-    <div class="reveal">
-      <a href="https://armoryfitnessandwellness.as.me/schedule/88534eda/appointment/93133519/calendar/8091173" target="_blank" rel="noopener" style="display:block;">
-        <img src="/images/hyrox-sim-flyer.jpg" alt="Hyrox Simulator Event - August 22, 2026 at Armory Fitness Ferndale" />
-      </a>
-    </div>
-    <div class="reveal">
-      <p class="eyebrow">Event details</p>
-      <h2 style="margin-bottom:24px;">Hyrox Simulator &middot; <em class="italic-serif">August 22, 2026</em></h2>
-      <p>Test your fitness, own your race. The next Hyrox SIM Event at Armory Fitness &mdash; full and half format simulator on the actual stations, race-day conditions, coached pacing. All fitness levels welcome.</p>
-      <div style="margin-top:32px;display:grid;gap:16px;color:var(--paper);">
-        <div><strong style="color:var(--brass);">When:</strong> Saturday, August 22, 2026 &middot; Start waves every 20 min. <strong>Full</strong> 6:00 AM &ndash; 9:00 AM &middot; <strong>Half</strong> 9:30 AM &ndash; 12:00 PM (last wave noon)</div>
-        <div><strong style="color:var(--brass);">Where:</strong> Armory Fitness &middot; 1920 Main St #11, Ferndale, WA 98248</div>
-        <div><strong style="color:var(--brass);">Cost:</strong> Full $50/athlete &middot; Half $25/athlete</div>
-        <div><strong style="color:var(--brass);">Format:</strong> Singles &amp; Doubles &middot; Open and Pro divisions available</div>
-        <div><strong style="color:var(--brass);">At signup:</strong> Give your estimated finish time so we can assign the best start wave. Start times will be announced August 17.</div>
-        <div><strong style="color:var(--brass);">Deadline:</strong> Register by August 15, 2026</div>
+
+
+  <!-- ═══ HERO: Split Layout ═══ -->
+  <section class="section" style="background:var(--obsidian);padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <div class="hyrox-hero">
+        <div class="hyrox-hero__text">
+          <p class="eyebrow">Home / Hyrox</p>
+          <h1>Hyrox <em>is our sport.</em></h1>
+          <p>A race-specific training program built to prepare you for competition through functional fitness, strength, and endurance. Whether you are competing for the first time or chasing a personal record, every session mirrors the demands of race day.</p>
+          <div class="hyrox-info-cards">
+            <div class="hyrox-info-card">
+              <div class="hyrox-info-card__icon">📅</div>
+              <div class="hyrox-info-card__label">Next Event</div>
+              <div class="hyrox-info-card__value">Saturday, August 22, 2026</div>
+            </div>
+            <div class="hyrox-info-card">
+              <div class="hyrox-info-card__icon">⏱</div>
+              <div class="hyrox-info-card__label">Format</div>
+              <div class="hyrox-info-card__value">Full &amp; Half Hyrox</div>
+            </div>
+          </div>
+          <a href="https://app.wodify.com/OnlineSalesPortal/Shop.aspx?OnlineSalesLink=armory" class="btn" target="_blank">Register for the Event &rarr;</a>
+        </div>
+        <div class="hyrox-hero__image" style="background-image:url('/images/hyrox-sim-flyer.jpg')"></div>
       </div>
-      <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;">
-        <a class="btn" href="https://armoryfitnessandwellness.as.me/schedule/88534eda/appointment/93133519/calendar/8091173" target="_blank" rel="noopener">Register for the Event &rarr;</a>
-        <a class="btn btn--outline" href="tel:+13603804405">Call 360-380-4405</a>
+    </div>
+  </section>
+
+  <!-- ═══ PROGRAM HIGHLIGHTS ═══ -->
+  <section class="hyrox-features">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--brass)">What Sets Our Program Apart</p>
+      <h2 class="section-head" style="color:var(--bone);font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.6rem)">Program Description</h2>
+      <p style="color:var(--fog);max-width:680px;line-height:1.7;margin-bottom:1rem">Armory Fitness brings Hyrox training to Ferndale. Our program is purpose-built to prepare you for race day. Every session mirrors the demands of the actual event: sustained aerobic output paired with heavy, skill-based functional movements that challenge your entire body. Sled pushes and pulls, ski ergs, rowing, burpee broad jumps, sandbag lunges, wall balls, and farmers carries, all coached with precision so you move efficiently and stay healthy.</p>
+      <div class="hyrox-features__grid">
+        <div class="hyrox-feature">
+          <h3>Race-Ready Programming</h3>
+          <p>Every workout focuses on specific demands of a Hyrox race. Over the course of your training program, you will train the exact eight workout stations alongside plenty of running volume so nothing surprises you on race day.</p>
+        </div>
+        <div class="hyrox-feature">
+          <h3>Expert Functional Coaching</h3>
+          <p>Our coaches break down each movement, from sled and ski erg to sandbag lunges, wall balls, and more, so you build efficiency and power. Proper form under fatigue is the foundation of a faster finish.</p>
+        </div>
+        <div class="hyrox-feature">
+          <h3>Scalable for Every Level</h3>
+          <p>Whether you are a first-time competitor or a seasoned racer, workouts scale to meet you where you are. Progress is built week over week so you arrive at the start line stronger each time.</p>
+        </div>
+        <div class="hyrox-feature">
+          <h3>Community &amp; Accountability</h3>
+          <p>Train alongside fellow athletes who share your goals. The energy of a group chasing the same race keeps motivation high. Join your fellow athletes for weekly training at Armory Fitness.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<section>
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div><p class="eyebrow">What&rsquo;s coming</p><h2>Three programs &middot; one race standard.</h2></div>
-      <p>If you don&rsquo;t know what Hyrox is yet, you will. It&rsquo;s the fastest-growing functional fitness racing format in the world &mdash; eight 1km runs alternated with eight workout stations. We&rsquo;re training the whole pipeline.</p>
+  <!-- ═══ EVENT DETAILS ═══ -->
+  <section class="hyrox-event-details">
+    <div class="wrap" style="text-align:center">
+      <p class="eyebrow" style="color:var(--brass)">Upcoming Event</p>
+      <h2 style="color:var(--bone);font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:.5rem">Hyrox Simulator &middot; August 22, 2026</h2>
+      <p style="color:var(--fog);max-width:600px;margin:0 auto 2rem">Test your fitness, own your race. Full and half format simulator sessions on the actual stations, race-day conditions, coached pacing. All fitness levels welcome.</p>
+      <div class="hyrox-event-grid">
+        <div class="hyrox-detail-card">
+          <div class="hyrox-detail-card__label">When</div>
+          <div class="hyrox-detail-card__value">Saturday, August 22, 2026<br>Full 6:00 AM &ndash; 9:00 AM<br>Half 9:30 AM &ndash; 12:00 PM</div>
+        </div>
+        <div class="hyrox-detail-card">
+          <div class="hyrox-detail-card__label">Where</div>
+          <div class="hyrox-detail-card__value">Armory Fitness<br>1920 Main St #11<br>Ferndale, WA 98248</div>
+        </div>
+        <div class="hyrox-detail-card">
+          <div class="hyrox-detail-card__label">Cost</div>
+          <div class="hyrox-detail-card__value">Full $50/athlete<br>Half $25/athlete</div>
+        </div>
+        <div class="hyrox-detail-card">
+          <div class="hyrox-detail-card__label">Format</div>
+          <div class="hyrox-detail-card__value">Singles &amp; Doubles<br>Open and Pro divisions</div>
+        </div>
+        <div class="hyrox-detail-card">
+          <div class="hyrox-detail-card__label">Register By</div>
+          <div class="hyrox-detail-card__value">August 15, 2026<br>Start times announced August 17</div>
+        </div>
+        <div class="hyrox-detail-card">
+          <div class="hyrox-detail-card__label">Sign Up</div>
+          <div class="hyrox-detail-card__value">Provide your estimated finish time so we can assign the best start wave</div>
+        </div>
+      </div>
+      <div class="hyrox-cta-row">
+        <a href="https://app.wodify.com/OnlineSalesPortal/Shop.aspx?OnlineSalesLink=armory" class="btn" target="_blank">Register for the Event &rarr;</a>
+        <a href="tel:3603804405" class="btn btn--outline">Call 360-380-4405</a>
+      </div>
     </div>
-    <div class="pillars__grid reveal">
-      <article class="pillar">
-        <div class="pillar__num">01</div>
-        <h3 class="pillar__title">Hyrox Foundations</h3>
-        <p class="pillar__body">For brand-new athletes. Learn every station, build base conditioning, and get comfortable with the format before you ever sign up for a race.</p>
-      </article>
-      <article class="pillar">
-        <div class="pillar__num">02</div>
-        <h3 class="pillar__title">Hyrox Level 1 Training</h3>
-        <p class="pillar__body">Programmed weekly training for athletes prepping for a Hyrox event. Pacing, transitions, station efficiency, race-day mindset.</p>
-      </article>
-      <article class="pillar">
-        <div class="pillar__num">03</div>
-        <h3 class="pillar__title">Hyrox Simulator &middot; August 22, 2026</h3>
-        <p class="pillar__body">Full-format simulator sessions on the actual stations. Lock in your pacing, test your fueling, and walk into your event knowing exactly what to expect.</p>
-      </article>
+  </section>
+
+  <!-- ═══ TRAINING PROGRAMS ═══ -->
+  <section class="hyrox-programs">
+    <div class="wrap">
+      <div class="section-head reveal" style="text-align:center;margin-bottom:2.5rem">
+        <p class="eyebrow" style="color:var(--brass)">Our Programs</p>
+        <h2 style="color:var(--bone);font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.6rem)">Hyrox Training at Armory</h2>
+      </div>
+      <div class="pillars__grid reveal">
+        <article class="pillar">
+          <div class="pillar__num" style="color:var(--brass)">01</div>
+          <h3 class="pillar__title">Hyrox Foundations</h3>
+          <p class="pillar__body">For brand-new athletes. Learn every station, build base conditioning, and get comfortable with the format before you ever sign up for a race.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar__num" style="color:var(--brass)">02</div>
+          <h3 class="pillar__title">Hyrox Level 1 Training</h3>
+          <p class="pillar__body">Programmed weekly training for athletes prepping for a Hyrox event. Pacing, transitions, station efficiency, race-day mindset.</p>
+        </article>
+        <article class="pillar">
+          <div class="pillar__num" style="color:var(--brass)">03</div>
+          <h3 class="pillar__title">Hyrox Simulator &middot; August 22, 2026</h3>
+          <p class="pillar__body">Full-format simulator sessions on the actual stations. Lock in your pacing, test your fueling, and walk into your event knowing exactly what to expect.</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- ═══ CONTACT ═══ -->
 
-
-<!-- CONTACT FORM (footer lead form) -->
 <section class="contact-form" id="contact-form">
   <div class="contact-form__inner">
     <p class="eyebrow">Get in touch</p>
@@ -197,7 +298,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer__grid">
     <div><div class="footer__brand">Armory</div><p class="footer__tag">A 24-hour strength, recovery and nutrition club for everyday people in Ferndale, Whatcom County and the Pacific Northwest.</p></div>
