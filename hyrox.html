@@ -101,6 +101,21 @@
 .hyrox-detail-card__value{color:var(--bone);font-size:1.05rem;line-height:1.5}
 .hyrox-cta-row{display:flex;gap:1rem;margin-top:2.5rem;justify-content:center}
 
+
+.hyrox-programs{padding:5rem 2rem;max-width:1200px;margin:0 auto;text-align:center}
+.hyrox-programs .eyebrow{color:var(--brass);text-transform:uppercase;letter-spacing:.15em;font-size:.85rem;margin-bottom:.5rem}
+.hyrox-programs h2{font-size:2.2rem;color:var(--paper);margin-bottom:1rem}
+.hyrox-programs .section-sub{color:var(--steel);font-size:1.05rem;max-width:640px;margin:0 auto 3rem}
+.hyrox-programs__grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;text-align:left}
+.hyrox-program-card{background:var(--carbon);border-radius:12px;padding:2.5rem;border:1px solid var(--graphite);transition:border-color .3s}
+.hyrox-program-card:hover{border-color:var(--brass)}
+.hyrox-program-card__name{font-size:1.4rem;font-weight:700;color:var(--brass);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
+.hyrox-program-card__subtitle{font-size:1rem;font-weight:600;color:var(--paper);margin-bottom:1rem}
+.hyrox-program-card__desc{color:var(--fog);font-size:.95rem;line-height:1.6;margin-bottom:1.5rem}
+.hyrox-program-card__focus-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:var(--steel);margin-bottom:.75rem;font-weight:600}
+.hyrox-program-card__focus-list{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.hyrox-program-card__focus-list li{background:var(--ink);color:var(--fog);font-size:.82rem;padding:.35rem .75rem;border-radius:20px;border:1px solid var(--graphite)}
+
 @media(max-width:768px){
 .hyrox-hero{grid-template-columns:1fr;text-align:center}
 .hyrox-hero__text{padding:3rem 0}
@@ -110,6 +125,10 @@
 .hyrox-event-grid{grid-template-columns:1fr}
 .hyrox-cta-row{flex-direction:column;align-items:center}
 .hyrox-cta-row .btn{width:100%;max-width:320px;text-align:center}
+
+  .hyrox-programs__grid{grid-template-columns:1fr}
+  .hyrox-programs h2{font-size:1.7rem}
+  .hyrox-program-card{padding:2rem}
 }
 </style>
 </head>
@@ -169,6 +188,50 @@
       </div>
     </div>
   </section>
+
+<section class="hyrox-programs">
+<p class="eyebrow">Training Programs</p>
+<h2>HYROX Classes at Armory Fitness</h2>
+<p class="section-sub">Four specialized classes designed to build every aspect of HYROX performance. Whether you're just starting or chasing a PR, there's a class for your level.</p>
+<div class="hyrox-programs__grid">
+<div class="hyrox-program-card">
+<div class="hyrox-program-card__name">Foundational</div>
+<div class="hyrox-program-card__subtitle">Build Your Base</div>
+<p class="hyrox-program-card__desc">Perfect for anyone looking to master the fundamentals of HYROX. This class focuses on proper movement mechanics, foundational strength, aerobic fitness, and learning each HYROX station. Whether you're preparing for your first race or building confidence, this class develops the skills and endurance needed for long-term success.</p>
+<div class="hyrox-program-card__focus-label">Focus</div>
+<ul class="hyrox-program-card__focus-list">
+<li>Movement quality</li><li>Strength fundamentals</li><li>Station technique</li><li>Aerobic endurance</li><li>Confidence &amp; consistency</li>
+</ul>
+</div>
+<div class="hyrox-program-card">
+<div class="hyrox-program-card__name">Engine</div>
+<div class="hyrox-program-card__subtitle">Build Your Endurance</div>
+<p class="hyrox-program-card__desc">The Engine class is designed to improve your cardiovascular fitness and work capacity. Through structured intervals, sustained efforts, and race-specific conditioning, you'll develop the ability to maintain speed, recover faster, and perform efficiently under fatigue.</p>
+<div class="hyrox-program-card__focus-label">Focus</div>
+<ul class="hyrox-program-card__focus-list">
+<li>Running endurance</li><li>Aerobic capacity</li><li>Lactate threshold</li><li>Sustainable pacing</li><li>Recovery between efforts</li>
+</ul>
+</div>
+<div class="hyrox-program-card">
+<div class="hyrox-program-card__name">Power</div>
+<div class="hyrox-program-card__subtitle">Build Strength &amp; Speed</div>
+<p class="hyrox-program-card__desc">Power develops the strength, force, and explosiveness needed to excel in HYROX's most demanding stations. Athletes focus on lifting heavier, moving faster, and producing more power while maintaining efficient movement.</p>
+<div class="hyrox-program-card__focus-label">Focus</div>
+<ul class="hyrox-program-card__focus-list">
+<li>Maximal strength</li><li>Explosive power</li><li>Speed development</li><li>Sled push &amp; pull performance</li><li>Functional strength</li>
+</ul>
+</div>
+<div class="hyrox-program-card">
+<div class="hyrox-program-card__name">Complete</div>
+<div class="hyrox-program-card__subtitle">Put It All Together</div>
+<p class="hyrox-program-card__desc">This is the class that prepares you for race day. Complete training combines running, strength, endurance, and HYROX-specific stations into one race-focused workout. You'll train your body and mind to handle fatigue, improve your pacing, and move efficiently through every station. By consistently training under race-like conditions, you'll build the confidence, resilience, and fitness needed to perform your best on race day.</p>
+<div class="hyrox-program-card__focus-label">Focus</div>
+<ul class="hyrox-program-card__focus-list">
+<li>Race-specific training</li><li>Running under fatigue</li><li>Pacing &amp; transitions</li><li>Strength &amp; endurance</li><li>Mental toughness</li><li>Race-day confidence</li>
+</ul>
+</div>
+</div>
+</section>
 
   <section class="hyrox-features">
     <div class="wrap">
